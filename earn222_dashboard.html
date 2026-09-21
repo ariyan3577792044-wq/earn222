@@ -3,524 +3,577 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-
 <title>earn222 Dashboard</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
 body{
-  margin:0;
-  background:#06101d;
-  color:#eef7ff;
-  font-family:Arial,sans-serif;
+ margin:0;
+ background:#06101d;
+ color:#eef7ff;
+ font-family:Arial,sans-serif
 }
+button{font-family:inherit;cursor:pointer}
 
 .app{
-  max-width:560px;
-  min-height:100vh;
-  margin:auto;
-  background:linear-gradient(180deg,#071426,#091b2e,#06101d);
-  padding-bottom:78px;
+ max-width:560px;
+ min-height:100vh;
+ margin:auto;
+ background:linear-gradient(180deg,#071426,#091b2e,#06101d);
+ padding-bottom:88px
 }
 
-/* HEADER */
-
 .top{
-  padding:12px 14px 14px;
-  background:linear-gradient(135deg,#061a32,#0759c9);
-  border-bottom:1px solid #19aaff55;
+ padding:12px 14px 14px;
+ background:linear-gradient(135deg,#061a32,#0759c9);
+ border-bottom:1px solid #19aaff55
 }
 
 .head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+ display:flex;
+ align-items:center;
+ justify-content:space-between
 }
 
 .logo{
-  font-size:23px;
-  font-weight:800;
+ font-size:23px;
+ font-weight:800
 }
 
-.logo span{
-  color:#36d8ff;
-}
+.logo span{color:#36d8ff}
 
 .icon{
-  width:34px;
-  height:34px;
-  border:1px solid #ffffff25;
-  border-radius:10px;
-  background:#ffffff12;
-  color:white;
-  font-size:17px;
+ width:34px;
+ height:34px;
+ border:1px solid #ffffff25;
+ border-radius:10px;
+ background:#ffffff12;
+ color:white;
+ font-size:17px
 }
 
 .tag{
-  text-align:center;
-  font-size:9px;
-  color:#b9e8ff;
-  margin-top:4px;
+ text-align:center;
+ font-size:9px;
+ color:#b9e8ff;
+ margin-top:4px
 }
 
-/* BALANCE */
-
 .hero{
-  margin:10px 12px 8px;
-  padding:13px 14px;
-  border-radius:16px;
-  background:linear-gradient(135deg,#0d2139,#0a2948);
-  border:1px solid #168be055;
-  box-shadow:0 7px 22px #0005;
+ margin:10px 12px 8px;
+ padding:13px 14px;
+ border-radius:16px;
+ background:linear-gradient(135deg,#0d2139,#0a2948);
+ border:1px solid #168be055;
+ box-shadow:0 7px 22px #0005
 }
 
 .welcome{
-  font-size:9px;
-  color:#7896b2;
+ font-size:9px;
+ color:#7896b2
 }
 
 .hello{
-  font-size:15px;
-  font-weight:bold;
-  margin-top:2px;
+ font-size:15px;
+ font-weight:bold;
+ margin-top:2px
 }
 
 .balance{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:9px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-top:9px
 }
 
 .balance small{
-  font-size:9px;
-  color:#91aac2;
+ font-size:9px;
+ color:#91aac2
 }
 
 .balance strong{
-  font-size:21px;
-  color:#35d9ff;
+ font-size:21px;
+ color:#35d9ff
 }
 
-/* TIME */
-
 .timegrid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:6px;
-  margin:0 12px 10px;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:6px;
+ margin:0 12px 10px
 }
 
 .time{
-  background:#0c2035;
-  border:1px solid #194663;
-  border-radius:11px;
-  text-align:center;
-  padding:8px 2px;
+ background:#0c2035;
+ border:1px solid #194663;
+ border-radius:11px;
+ text-align:center;
+ padding:8px 2px
 }
 
 .time b{
-  display:block;
-  font-size:15px;
-  color:#35d9ff;
+ display:block;
+ font-size:15px;
+ color:#35d9ff
 }
 
 .time span{
-  font-size:8px;
-  color:#849db5;
+ font-size:8px;
+ color:#849db5
 }
 
-/* NOTICE */
-
 .notice{
-  margin:0 12px 11px;
-  padding:9px 11px;
-  border-left:3px solid #159cff;
-  border-radius:10px;
-  background:#0c2036;
-  color:#bddcf4;
-  font-size:9px;
-  line-height:15px;
+ margin:0 12px 11px;
+ padding:9px 11px;
+ border-left:3px solid #159cff;
+ border-radius:10px;
+ background:#0c2036;
+ color:#bddcf4;
+ font-size:9px;
+ line-height:15px
 }
 
 .notice b{
-  color:white;
-  font-size:10px;
+ color:white;
+ font-size:10px
 }
-
-/* TITLE */
 
 .title{
-  margin:8px 13px 8px;
-  font-size:14px;
-  font-weight:bold;
+ margin:8px 13px;
+ font-size:14px;
+ font-weight:bold
 }
 
-.title span{
-  color:#36d9ff;
-}
-
-/* PROJECTS */
+.title span{color:#36d9ff}
 
 .projects{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:7px;
-  margin:0 12px;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:7px;
+ margin:0 12px
 }
 
 .project{
-  height:82px;
-  min-width:0;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-
-  text-align:center;
-
-  padding:6px 2px;
-
-  background:linear-gradient(
-    180deg,
-    #10273e,
-    #0b1b2d
-  );
-
-  border:1px solid #1b4967;
-  border-radius:13px;
-
-  box-shadow:0 5px 15px #0004;
-
-  transition:.2s;
+ height:82px;
+ min-width:0;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ padding:6px 2px;
+ background:linear-gradient(180deg,#10273e,#0b1b2d);
+ border:1px solid #1b4967;
+ border-radius:13px;
+ box-shadow:0 5px 15px #0004;
+ transition:.2s
 }
 
-.project:active{
-  transform:scale(.96);
-}
+.project:active{transform:scale(.96)}
 
 .project .ico{
-  font-size:17px;
-  line-height:18px;
-  margin-bottom:3px;
+ font-size:17px;
+ line-height:18px;
+ margin-bottom:3px
 }
 
 .project i{
-  font-style:normal;
-  font-size:10px;
-  font-weight:bold;
-  color:#edf7ff;
-  line-height:14px;
-  word-break:break-word;
+ font-style:normal;
+ font-size:10px;
+ font-weight:bold;
+ color:#edf7ff;
+ line-height:14px;
+ word-break:break-word
 }
 
 .project small{
-  font-size:7px;
-  color:#7892aa;
-  line-height:10px;
-  margin-top:2px;
+ font-size:7px;
+ color:#7892aa;
+ line-height:10px;
+ margin-top:2px
 }
 
-.off{
-  opacity:.7;
-}
-
-/* BOTTOM NAV */
+.off{opacity:.7}
 
 .bottom{
-  position:fixed;
-  bottom:0;
-  left:50%;
-
-  transform:translateX(-50%);
-
-  width:100%;
-  max-width:560px;
-  height:65px;
-
-  background:#071522ee;
-
-  backdrop-filter:blur(12px);
-
-  border-top:1px solid #1c4562;
-
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-
-  z-index:10;
+ position:fixed;
+ bottom:0;
+ left:50%;
+ transform:translateX(-50%);
+ width:100%;
+ max-width:560px;
+ height:65px;
+ background:#071522ee;
+ backdrop-filter:blur(12px);
+ border-top:1px solid #1c4562;
+ display:flex;
+ justify-content:space-around;
+ align-items:center;
+ z-index:10
 }
 
-.bottom a{
-  text-decoration:none;
-  color:#7893aa;
-
-  font-size:8px;
-  text-align:center;
-
-  min-width:52px;
+.bottom button.nav{
+ background:none;
+ border:0;
+ color:#7893aa;
+ font-size:8px;
+ text-align:center;
+ min-width:52px
 }
 
-.bottom a b{
-  display:block;
-  font-size:18px;
-  color:#9bb2c8;
-  margin-bottom:2px;
+.bottom button.nav b{
+ display:block;
+ font-size:18px;
+ color:#9bb2c8;
+ margin-bottom:2px
 }
 
-.bottom a:first-child,
-.bottom a:first-child b{
-  color:#35d9ff;
+.bottom button.nav.active,
+.bottom button.nav.active b{
+ color:#35d9ff
 }
 
 .plus{
-  width:48px;
-  height:48px;
-
-  border-radius:50%;
-  border:4px solid #102b43;
-
-  background:linear-gradient(
-    135deg,
-    #0787ff,
-    #15c8ff
-  );
-
-  color:white;
-  font-size:26px;
-
-  box-shadow:0 0 18px #0aa8ff66;
+ width:48px;
+ height:48px;
+ border-radius:50%;
+ border:4px solid #102b43;
+ background:linear-gradient(135deg,#0787ff,#15c8ff);
+ color:white;
+ font-size:26px;
+ box-shadow:0 0 18px #0aa8ff66
 }
 
-/* SMALL PHONE */
+.panel{
+ display:none;
+ padding:12px
+}
+
+.panel.active{display:block}
+
+.card{
+ background:linear-gradient(180deg,#10273e,#0b1b2d);
+ border:1px solid #1b4967;
+ border-radius:14px;
+ padding:14px;
+ margin-bottom:10px
+}
+
+.card h3{
+ margin:0 0 8px;
+ font-size:14px
+}
+
+.muted{
+ color:#829db6;
+ font-size:10px;
+ line-height:16px
+}
+
+.row{
+ display:flex;
+ justify-content:space-between;
+ gap:10px;
+ padding:9px 0;
+ border-bottom:1px solid #1b496755;
+ font-size:11px
+}
+
+.row:last-child{border-bottom:0}
+
+.action{
+ width:100%;
+ padding:11px;
+ border:0;
+ border-radius:10px;
+ background:linear-gradient(135deg,#087cff,#15c8ff);
+ color:white;
+ font-weight:bold;
+ margin-top:9px
+}
+
+.danger{
+ background:linear-gradient(135deg,#d93a55,#ff6b6b)
+}
+
+.back{
+ background:#10273e;
+ border:1px solid #1b4967;
+ color:white;
+ padding:8px 12px;
+ border-radius:9px;
+ font-size:10px;
+ margin-bottom:10px
+}
+
+.modal{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:#0009;
+ z-index:30;
+ align-items:flex-end;
+ justify-content:center
+}
+
+.modal.show{display:flex}
+
+.sheet{
+ width:100%;
+ max-width:560px;
+ background:#0b1b2d;
+ border:1px solid #1b4967;
+ border-bottom:0;
+ border-radius:18px 18px 0 0;
+ padding:16px
+}
+
+.sheet h3{
+ margin:0 0 8px;
+ font-size:15px
+}
+
+.sheet p{
+ font-size:10px;
+ color:#9eb7ca;
+ line-height:16px
+}
+
+.sheet button{
+ width:100%;
+ margin-top:7px;
+ padding:11px;
+ border-radius:10px;
+ border:1px solid #1b4967;
+ background:#10273e;
+ color:white
+}
+
+.toast{
+ position:fixed;
+ left:50%;
+ bottom:78px;
+ transform:translateX(-50%) translateY(20px);
+ background:#10273e;
+ border:1px solid #1b4967;
+ color:#fff;
+ padding:9px 13px;
+ border-radius:10px;
+ font-size:10px;
+ opacity:0;
+ pointer-events:none;
+ transition:.25s;
+ z-index:50
+}
+
+.toast.show{
+ opacity:1;
+ transform:translateX(-50%) translateY(0)
+}
 
 @media(max-width:380px){
-
-  .projects{
-    gap:5px;
-  }
-
-  .project{
-    height:78px;
-  }
-
-  .project i{
-    font-size:9px;
-  }
-
-  .project small{
-    font-size:6.5px;
-  }
-
-  .time{
-    padding:7px 1px;
-  }
+ .projects{gap:5px}
+ .project{height:78px}
+ .project i{font-size:9px}
+ .project small{font-size:6.5px}
+ .time{padding:7px 1px}
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="app">
 
-<!-- HEADER -->
-
 <div class="top">
+ <div class="head">
+  <button class="icon" onclick="openMenu()">☰</button>
 
-  <div class="head">
-
-    <button class="icon">
-      ☰
-    </button>
-
-    <div class="logo">
-      earn<span>222</span>
-    </div>
-
-    <button class="icon">
-      🔔
-    </button>
-
+  <div class="logo">
+   earn<span>222</span>
   </div>
 
-  <div class="tag">
-    EARN • TASKS • REWARDS
-  </div>
+  <button class="icon" onclick="showNotice()">🔔</button>
+ </div>
 
+ <div class="tag">EARN • TASKS • REWARDS</div>
 </div>
 
 
-<!-- BALANCE -->
+<!-- DASHBOARD -->
 
-<div class="hero">
+<div id="dashboardPanel" class="panel active">
 
-  <div class="welcome">
-    WELCOME BACK
-  </div>
+ <div class="hero">
 
-  <div class="hello">
-    স্বাগতম! 👋
+  <div class="welcome">WELCOME BACK</div>
+
+  <div class="hello" id="hello">
+   স্বাগতম! 👋
   </div>
 
   <div class="balance">
-
-    <small>
-      বর্তমান ব্যালেন্স
-    </small>
-
-    <strong>
-      ৳ 0.00
-    </strong>
-
+   <small>বর্তমান ব্যালেন্স</small>
+   <strong id="balance">৳ 0.00</strong>
   </div>
 
-</div>
+ </div>
 
 
-<!-- TIME -->
-
-<div class="timegrid">
+ <div class="timegrid">
 
   <div class="time">
-    <b>0</b>
-    <span>দিন</span>
+   <b id="days">0</b>
+   <span>দিন</span>
   </div>
 
   <div class="time">
-    <b>0</b>
-    <span>ঘণ্টা</span>
+   <b id="hours">0</b>
+   <span>ঘণ্টা</span>
   </div>
 
   <div class="time">
-    <b>0</b>
-    <span>মিনিট</span>
+   <b id="mins">0</b>
+   <span>মিনিট</span>
   </div>
 
   <div class="time">
-    <b>0</b>
-    <span>সেকেন্ড</span>
+   <b id="secs">0</b>
+   <span>সেকেন্ড</span>
   </div>
 
-</div>
+ </div>
 
 
-<!-- NOTICE -->
+ <div class="notice">
 
-<div class="notice">
+  🔔 <b>নোটিশ</b><br>
 
-  🔔 <b>নোটিশ</b>
+  <span id="noticeText">
+   কোনো নতুন নোটিশ নেই
+  </span>
 
-  <br>
-
-  কোনো নতুন নোটিশ নেই
-
-</div>
+ </div>
 
 
-<!-- PROJECT TITLE -->
-
-<div class="title">
-
+ <div class="title">
   🚀 <span>প্রজেক্টসমূহ</span>
+ </div>
+
+
+ <div class="projects" id="projects"></div>
 
 </div>
 
 
-<!-- PROJECTS -->
+<!-- WALLET -->
 
-<div class="projects">
+<div id="walletPanel" class="panel">
 
+ <button class="back" onclick="showPanel('dashboard')">
+  ← ড্যাশবোর্ড
+ </button>
 
-  <div class="project">
-    <div class="ico">📘</div>
-    <i>ফেসবুক</i>
-    <small>ফেসবুক সেল</small>
+ <div class="card">
+
+  <h3>💰 আমার ওয়ালেট</h3>
+
+  <div class="row">
+   <span>বর্তমান ব্যালেন্স</span>
+   <b id="walletBalance">৳ 0.00</b>
   </div>
 
-
-  <div class="project">
-    <div class="ico">📧</div>
-    <i>জিমেইল</i>
-    <small>জিমেইল সেল</small>
+  <div class="row">
+   <span>মোট আয়</span>
+   <b>৳ 0.00</b>
   </div>
 
-
-  <div class="project">
-    <div class="ico">📸</div>
-    <i>ইনস্টা</i>
-    <small>ইনস্টা সেল</small>
+  <div class="row">
+   <span>মোট উত্তোলন</span>
+   <b>৳ 0.00</b>
   </div>
 
+  <button class="action" onclick="toast('উত্তোলন সিস্টেম শীঘ্রই চালু হবে')">
+   টাকা উত্তোলন
+  </button>
 
-  <div class="project">
-    <div class="ico">💼</div>
-    <i>জব পোস্ট</i>
-    <small>কাজ করুন</small>
+ </div>
+
+
+ <div class="card">
+
+  <h3>📜 লেনদেন</h3>
+
+  <div class="muted">
+   এখনও কোনো লেনদেন নেই।
   </div>
 
-
-  <div class="project">
-    <div class="ico">👑</div>
-    <i>লিডারশিপ</i>
-    <small>বোনাস</small>
-  </div>
-
-
-  <div class="project">
-    <div class="ico">🎯</div>
-    <i>টার্গেট</i>
-    <small>টার্গেট বোনাস</small>
-  </div>
-
-
-  <div class="project">
-    <div class="ico">👥</div>
-    <i>রেফার</i>
-    <small>রেফারেল</small>
-  </div>
-
-
-  <div class="project">
-    <div class="ico">🎁</div>
-    <i>গিফট কোড</i>
-    <small>কোড ব্যবহার</small>
-  </div>
-
-
-  <div class="project">
-    <div class="ico">➗</div>
-    <i>অংক করুন</i>
-    <small>টাস্ক</small>
-  </div>
-
-
-  <div class="project">
-    <div class="ico">⚙️</div>
-    <i>মাইক্রো জব</i>
-    <small>কাজ করুন</small>
-  </div>
-
-
-  <div class="project">
-    <div class="ico">⌨️</div>
-    <i>টাইপিং জব</i>
-    <small>কাজ করুন</small>
-  </div>
-
-
-  <div class="project off">
-    <div class="ico">🚫</div>
-    <i>ADS VIEW</i>
-    <small>বন্ধ</small>
-  </div>
-
+ </div>
 
 </div>
+
+
+<!-- TASK -->
+
+<div id="taskPanel" class="panel">
+
+ <button class="back" onclick="showPanel('dashboard')">
+  ← ড্যাশবোর্ড
+ </button>
+
+ <div class="title">
+  🚀 <span>সব টাস্ক</span>
+ </div>
+
+ <div id="taskList"></div>
+
+</div>
+
+
+<!-- PROFILE -->
+
+<div id="profilePanel" class="panel">
+
+ <button class="back" onclick="showPanel('dashboard')">
+  ← ড্যাশবোর্ড
+ </button>
+
+ <div class="card">
+
+  <h3>👤 আমার প্রোফাইল</h3>
+
+  <div class="row">
+   <span>নাম</span>
+   <b id="profileName">-</b>
+  </div>
+
+  <div class="row">
+   <span>Gmail</span>
+   <b id="profileEmail">-</b>
+  </div>
+
+  <div class="row">
+   <span>মোবাইল</span>
+   <b id="profileMobile">-</b>
+  </div>
+
+  <div class="row">
+   <span>Invite Code</span>
+   <b id="profileInvite">-</b>
+  </div>
+
+ </div>
+
+
+ <div class="card">
+
+  <h3>🔐 অ্যাকাউন্ট</h3>
+
+  <button class="action danger" onclick="logout()">
+   Logout
+  </button>
+
+ </div>
 
 </div>
 
@@ -529,31 +582,451 @@ body{
 
 <div class="bottom">
 
-  <a href="#">
-    <b>⌂</b>
-    ড্যাশবোর্ড
-  </a>
+ <button class="nav active" id="navDashboard" onclick="showPanel('dashboard')">
+  <b>⌂</b>
+  ড্যাশবোর্ড
+ </button>
 
-  <a href="#">
-    <b>৳</b>
-    ওয়ালেট
-  </a>
+ <button class="nav" id="navWallet" onclick="showPanel('wallet')">
+  <b>৳</b>
+  ওয়ালেট
+ </button>
 
-  <button class="plus">
-    +
-  </button>
+ <button class="plus" onclick="openQuick()">
+  +
+ </button>
 
-  <a href="#">
-    <b>☷</b>
-    টাস্ক
-  </a>
+ <button class="nav" id="navTask" onclick="showPanel('task')">
+  <b>☷</b>
+  টাস্ক
+ </button>
 
-  <a href="#">
-    <b>♙</b>
-    প্রোফাইল
-  </a>
+ <button class="nav" id="navProfile" onclick="showPanel('profile')">
+  <b>♙</b>
+  প্রোফাইল
+ </button>
 
 </div>
 
+</div>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal" onclick="closeModal(event)">
+
+ <div class="sheet" onclick="event.stopPropagation()">
+
+  <h3 id="modalTitle">earn222</h3>
+
+  <p id="modalText"></p>
+
+  <button onclick="closeModal()">
+   বন্ধ করুন
+  </button>
+
+ </div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+const SUPABASE_URL =
+"https://uvnauldjuvkwonufgayz.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_i7nrYBDU_YkpI528VM7xnw_skuQXidW";
+
+const TOKEN =
+localStorage.getItem("earn222_access_token");
+
+
+const projects = [
+
+ ["📘","ফেসবুক","ফেসবুক সেল"],
+
+ ["📧","জিমেইল","জিমেইল সেল"],
+
+ ["📸","ইনস্টা","ইনস্টা সেল"],
+
+ ["💼","জব পোস্ট","কাজ করুন"],
+
+ ["👑","লিডারশিপ","বোনাস"],
+
+ ["🎯","টার্গেট","টার্গেট বোনাস"],
+
+ ["👥","রেফার","রেফারেল"],
+
+ ["🎁","গিফট কোড","কোড ব্যবহার"],
+
+ ["➗","অংক করুন","টাস্ক"],
+
+ ["⚙️","মাইক্রো জব","কাজ করুন"],
+
+ ["⌨️","টাইপিং জব","কাজ করুন"],
+
+ ["🚫","ADS VIEW","বন্ধ"]
+
+];
+
+
+if(!TOKEN){
+
+ location.replace("index.html");
+
+}
+
+
+function renderProjects(){
+
+ const box =
+ document.getElementById("projects");
+
+ const list =
+ document.getElementById("taskList");
+
+
+ box.innerHTML =
+ projects.map((p,i)=>`
+
+ <button
+ class="project ${i===11?"off":""}"
+ onclick="openTask(${i})">
+
+ <div class="ico">${p[0]}</div>
+
+ <i>${p[1]}</i>
+
+ <small>${p[2]}</small>
+
+ </button>
+
+ `).join("");
+
+
+ list.innerHTML =
+ projects
+ .filter((p,i)=>i!==11)
+ .map((p,i)=>`
+
+ <div class="card">
+
+ <h3>${p[0]} ${p[1]}</h3>
+
+ <div class="muted">
+ ${p[2]} — টাস্কের বিস্তারিত এখানে দেখানো হবে।
+ </div>
+
+ <button
+ class="action"
+ onclick="openTask(${i})">
+
+ টাস্ক খুলুন
+
+ </button>
+
+ </div>
+
+ `).join("");
+
+}
+
+
+async function loadUser(){
+
+ try{
+
+  const r =
+  await fetch(
+   SUPABASE_URL+"/auth/v1/user",
+   {
+    headers:{
+     "apikey":SUPABASE_KEY,
+     "Authorization":"Bearer "+TOKEN
+    }
+   }
+  );
+
+
+  const data =
+  await r.json();
+
+
+  if(!r.ok || !data.id){
+
+   logout(false);
+
+   return;
+
+  }
+
+
+  const m =
+  data.user_metadata || {};
+
+
+  const name =
+  m.full_name || "ব্যবহারকারী";
+
+
+  document.getElementById("hello")
+  .textContent =
+  "স্বাগতম, "+name+"! 👋";
+
+
+  document.getElementById("profileName")
+  .textContent = name;
+
+
+  document.getElementById("profileEmail")
+  .textContent =
+  data.email || "-";
+
+
+  document.getElementById("profileMobile")
+  .textContent =
+  m.mobile || "-";
+
+
+  document.getElementById("profileInvite")
+  .textContent =
+  m.invite_code || "-";
+
+
+ }catch(e){
+
+  document.getElementById("hello")
+  .textContent =
+  "স্বাগতম! 👋";
+
+ }
+
+}
+
+
+function showPanel(name){
+
+ document
+ .querySelectorAll(".panel")
+ .forEach(x =>
+  x.classList.remove("active")
+ );
+
+
+ document
+ .getElementById(name+"Panel")
+ .classList.add("active");
+
+
+ document
+ .querySelectorAll(".nav")
+ .forEach(x =>
+  x.classList.remove("active")
+ );
+
+
+ const nav =
+ document.getElementById(
+  "nav"+
+  name.charAt(0).toUpperCase()+
+  name.slice(1)
+ );
+
+
+ if(nav)
+ nav.classList.add("active");
+
+
+ window.scrollTo(0,0);
+
+}
+
+
+function openTask(i){
+
+ const p =
+ projects[i];
+
+
+ if(i===11){
+
+  showNotice();
+
+  return;
+
+ }
+
+
+ openModal(
+  p[0]+" "+p[1],
+  "এই টাস্কটি Dashboard-এ চালু আছে। টাস্কের নিয়ম, রেট এবং সাবমিশন সিস্টেম Admin থেকে যোগ করা হলে এখানেই কাজ করা যাবে।"
+ );
+
+}
+
+
+function openQuick(){
+
+ openModal(
+  "⚡ Quick Menu",
+  "Wallet, Task এবং Profile নিচের মেনু থেকেই ব্যবহার করতে পারবেন। নতুন earning features যোগ হলে এখান থেকেও দ্রুত পাওয়া যাবে।"
+ );
+
+}
+
+
+function openMenu(){
+
+ openModal(
+  "☰ Menu",
+  "Dashboard, Wallet, Task এবং Profile এখন সকল লগইন করা ব্যবহারকারীর জন্য ব্যবহারযোগ্য।"
+ );
+
+}
+
+
+function showNotice(){
+
+ openModal(
+  "🔔 নোটিশ",
+  document.getElementById("noticeText").textContent
+ );
+
+}
+
+
+function openModal(title,text){
+
+ document.getElementById("modalTitle")
+ .textContent = title;
+
+ document.getElementById("modalText")
+ .textContent = text;
+
+ document.getElementById("modal")
+ .classList.add("show");
+
+}
+
+
+function closeModal(e){
+
+ if(!e || e.target.id==="modal"){
+
+  document.getElementById("modal")
+  .classList.remove("show");
+
+ }
+
+}
+
+
+function toast(t){
+
+ const x =
+ document.getElementById("toast");
+
+ x.textContent=t;
+
+ x.classList.add("show");
+
+ setTimeout(
+  ()=>x.classList.remove("show"),
+  2200
+ );
+
+}
+
+
+function logout(redirect=true){
+
+ localStorage.removeItem(
+  "earn222_access_token"
+ );
+
+ localStorage.removeItem(
+  "earn222_user_email"
+ );
+
+ localStorage.removeItem(
+  "earn222_login_time"
+ );
+
+ if(redirect)
+ location.replace("index.html");
+
+}
+
+
+function startTimer(){
+
+ let started =
+ localStorage.getItem(
+  "earn222_login_time"
+ );
+
+
+ if(!started){
+
+  started = Date.now();
+
+  localStorage.setItem(
+   "earn222_login_time",
+   started
+  );
+
+ }
+
+
+ setInterval(()=>{
+
+  let s =
+  Math.floor(
+   (Date.now()-Number(started))/1000
+  );
+
+
+  document.getElementById("days")
+  .textContent =
+  Math.floor(s/86400);
+
+
+  s %= 86400;
+
+
+  document.getElementById("hours")
+  .textContent =
+  Math.floor(s/3600);
+
+
+  s %= 3600;
+
+
+  document.getElementById("mins")
+  .textContent =
+  Math.floor(s/60);
+
+
+  document.getElementById("secs")
+  .textContent =
+  s%60;
+
+ },1000);
+
+}
+
+
+renderProjects();
+
+loadUser();
+
+startTimer();
+
+</script>
+
 </body>
-</html>
+  </html>
