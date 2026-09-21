@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>earn222 - Login</title>
+<title>earn222 - Registration & Login</title>
 
 <style>
 *{box-sizing:border-box}
@@ -11,7 +11,7 @@
 body{
   margin:0;
   min-height:100vh;
-  background:linear-gradient(135deg,#06101d,#071c31,#062b4b);
+  background:linear-gradient(135deg,#06101d,#071d35,#06101d);
   color:#fff;
   font-family:Arial,sans-serif;
   display:flex;
@@ -22,52 +22,53 @@ body{
 
 .box{
   width:100%;
-  max-width:390px;
-  background:#0a1b2d;
-  border:1px solid #1c5278;
-  border-radius:20px;
-  padding:22px;
-  box-shadow:0 15px 40px #0008;
+  max-width:420px;
+  background:#0b1b2d;
+  border:1px solid #1b4968;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 35px #0008;
 }
 
 .logo{
   text-align:center;
-  font-size:30px;
-  font-weight:800;
+  font-size:28px;
+  font-weight:bold;
   margin-bottom:5px;
 }
 
 .logo span{
-  color:#28d7ff;
+  color:#35d9ff;
 }
 
 .sub{
   text-align:center;
-  color:#86a8c3;
-  font-size:12px;
-  margin-bottom:20px;
+  color:#8ca8c0;
+  font-size:11px;
+  margin-bottom:18px;
 }
 
 .tabs{
   display:flex;
   gap:7px;
-  margin-bottom:18px;
+  margin-bottom:15px;
 }
 
-.tabs button{
+.tab{
   flex:1;
+  border:1px solid #214d69;
+  background:#081625;
+  color:#91aabe;
   padding:11px;
-  border:1px solid #245777;
   border-radius:10px;
-  background:#0d263d;
-  color:#9db9cc;
+  font-size:13px;
   font-weight:bold;
 }
 
-.tabs button.active{
-  background:#087ed1;
+.tab.active{
+  background:linear-gradient(135deg,#087cff,#15c8ff);
   color:#fff;
-  border-color:#13bfff;
+  border-color:#15bfff;
 }
 
 .form{
@@ -80,76 +81,56 @@ body{
 
 label{
   display:block;
-  color:#a9c5d9;
-  font-size:11px;
-  margin:11px 0 5px;
+  color:#a9c4d9;
+  font-size:10px;
+  margin:9px 0 5px;
 }
 
 input{
   width:100%;
   padding:12px;
   border-radius:10px;
-  border:1px solid #245777;
-  background:#061525;
+  border:1px solid #214d69;
+  background:#071522;
   color:#fff;
   outline:none;
-  font-size:14px;
+  font-size:13px;
 }
 
 input:focus{
-  border-color:#16bfff;
-  box-shadow:0 0 0 2px #16bfff22;
+  border-color:#19bfff;
+  box-shadow:0 0 0 2px #19bfff22;
 }
 
-.passbox{
-  position:relative;
-}
-
-.passbox input{
-  padding-right:45px;
-}
-
-.eye{
-  position:absolute;
-  right:8px;
-  top:7px;
-  width:34px;
-  height:34px;
-  border:0;
-  background:transparent;
-  color:#9db9cc;
-  font-size:17px;
-}
-
-.btn{
+button.main{
   width:100%;
-  margin-top:17px;
-  padding:13px;
+  margin-top:15px;
+  padding:12px;
   border:0;
-  border-radius:11px;
-  background:linear-gradient(135deg,#087fe0,#10c7ff);
+  border-radius:10px;
+  background:linear-gradient(135deg,#087cff,#15c8ff);
   color:#fff;
-  font-size:15px;
+  font-size:14px;
   font-weight:bold;
 }
 
-.btn:active{
+button.main:active{
   transform:scale(.98);
 }
 
 .msg{
-  min-height:20px;
-  margin-top:12px;
+  min-height:18px;
   text-align:center;
+  margin-top:12px;
   font-size:11px;
-  color:#55dcff;
+  color:#54dfff;
 }
 
-.small{
+.footer{
   text-align:center;
-  margin-top:14px;
-  color:#7898ad;
-  font-size:10px;
+  color:#66839c;
+  font-size:9px;
+  margin-top:15px;
 }
 </style>
 </head>
@@ -162,89 +143,64 @@ input:focus{
   <div class="sub">EARN • TASKS • REWARDS</div>
 
   <div class="tabs">
-    <button id="loginTab" class="active" onclick="showLogin()">Login</button>
-    <button id="registerTab" onclick="showRegister()">Registration</button>
-  </div>
-
-  <!-- LOGIN -->
-  <div id="loginForm" class="form active">
-
-    <label>Email Address</label>
-    <input id="loginEmail"
-           type="email"
-           placeholder="আপনার Gmail লিখুন"
-           autocomplete="email">
-
-    <label>Password</label>
-    <div class="passbox">
-      <input id="loginPassword"
-             type="password"
-             placeholder="পাসওয়ার্ড লিখুন"
-             autocomplete="current-password">
-      <button class="eye" onclick="togglePass('loginPassword')">👁</button>
-    </div>
-
-    <button class="btn" id="loginBtn" onclick="login()">
-      লগইন করুন
+    <button class="tab active" id="registerTab" onclick="showRegister()">
+      রেজিস্ট্রেশন
     </button>
 
-    <div class="msg" id="loginMsg"></div>
+    <button class="tab" id="loginTab" onclick="showLogin()">
+      লগইন
+    </button>
   </div>
 
 
   <!-- REGISTRATION -->
-  <div id="registerForm" class="form">
+  <div class="form active" id="registerForm">
 
     <label>পূর্ণ নাম</label>
-    <input id="regName"
-           type="text"
-           placeholder="আপনার নাম লিখুন"
-           autocomplete="name">
+    <input id="regName" type="text" placeholder="আপনার নাম">
 
     <label>মোবাইল নাম্বার</label>
-    <input id="regMobile"
-           type="tel"
-           placeholder="01XXXXXXXXX"
-           autocomplete="tel">
+    <input id="regMobile" type="tel" placeholder="01XXXXXXXXX">
 
-    <label>Email Address</label>
-    <input id="regEmail"
-           type="email"
-           placeholder="আপনার Gmail লিখুন"
-           autocomplete="email">
+    <label>Gmail</label>
+    <input id="regEmail" type="email" placeholder="example@gmail.com">
 
-    <label>Password</label>
-    <div class="passbox">
-      <input id="regPassword"
-             type="password"
-             placeholder="পাসওয়ার্ড দিন"
-             autocomplete="new-password">
-      <button class="eye" onclick="togglePass('regPassword')">👁</button>
-    </div>
+    <label>পাসওয়ার্ড</label>
+    <input id="regPassword" type="password" placeholder="কমপক্ষে ৬ অক্ষর">
 
-    <label>Confirm Password</label>
-    <div class="passbox">
-      <input id="regConfirm"
-             type="password"
-             placeholder="পাসওয়ার্ড আবার দিন"
-             autocomplete="new-password">
-      <button class="eye" onclick="togglePass('regConfirm')">👁</button>
-    </div>
+    <label>পাসওয়ার্ড আবার লিখুন</label>
+    <input id="regConfirm" type="password" placeholder="পাসওয়ার্ড নিশ্চিত করুন">
 
-    <label>Invite Code (ঐচ্ছিক)</label>
-    <input id="regInvite"
-           type="text"
-           placeholder="Invite Code থাকলে দিন">
+    <label>Invite Code</label>
+    <input id="regInvite" type="text" placeholder="Invite Code">
 
-    <button class="btn" id="registerBtn" onclick="register()">
-      অ্যাকাউন্ট তৈরি করুন
+    <button class="main" onclick="registerUser()">
+      রেজিস্ট্রেশন করুন
     </button>
 
-    <div class="msg" id="registerMsg"></div>
   </div>
 
-  <div class="small">
-    © 2026 earn222
+
+  <!-- LOGIN -->
+  <div class="form" id="loginForm">
+
+    <label>Gmail</label>
+    <input id="loginEmail" type="email" placeholder="example@gmail.com">
+
+    <label>পাসওয়ার্ড</label>
+    <input id="loginPassword" type="password" placeholder="আপনার পাসওয়ার্ড">
+
+    <button class="main" onclick="loginUser()">
+      লগইন করুন
+    </button>
+
+  </div>
+
+
+  <div class="msg" id="msg"></div>
+
+  <div class="footer">
+    earn222 © 2026
   </div>
 
 </div>
@@ -259,30 +215,9 @@ const SUPABASE_KEY =
 "sb_publishable_i7nrYBDU_YkpI528VM7xnw_skuQXidW";
 
 
-/* আগে থেকেই লগইন থাকলে Dashboard */
-if(localStorage.getItem("earn222_access_token")){
-  location.replace("earn222_dashboard.html");
-}
-
-
-/* LOGIN / REGISTRATION পরিবর্তন */
-
-function showLogin(){
-
-  document.getElementById("loginForm")
-    .classList.add("active");
-
-  document.getElementById("registerForm")
-    .classList.remove("active");
-
-  document.getElementById("loginTab")
-    .classList.add("active");
-
-  document.getElementById("registerTab")
-    .classList.remove("active");
-
-}
-
+/* =========================
+   SHOW REGISTER
+========================= */
 
 function showRegister(){
 
@@ -298,132 +233,37 @@ function showRegister(){
   document.getElementById("loginTab")
     .classList.remove("active");
 
+  document.getElementById("msg").textContent="";
 }
 
 
-/* PASSWORD SHOW / HIDE */
+/* =========================
+   SHOW LOGIN
+========================= */
 
-function togglePass(id){
+function showLogin(){
 
-  const input=document.getElementById(id);
+  document.getElementById("loginForm")
+    .classList.add("active");
 
-  input.type =
-    input.type==="password"
-    ? "text"
-    : "password";
+  document.getElementById("registerForm")
+    .classList.remove("active");
 
+  document.getElementById("loginTab")
+    .classList.add("active");
+
+  document.getElementById("registerTab")
+    .classList.remove("active");
+
+  document.getElementById("msg").textContent="";
 }
 
 
-/* LOGIN */
+/* =========================
+   REGISTRATION
+========================= */
 
-async function login(){
-
-  const email =
-    document.getElementById("loginEmail").value.trim();
-
-  const password =
-    document.getElementById("loginPassword").value;
-
-  const msg =
-    document.getElementById("loginMsg");
-
-  const btn =
-    document.getElementById("loginBtn");
-
-
-  if(!email || !password){
-
-    msg.textContent="ইমেইল ও পাসওয়ার্ড দিন।";
-    return;
-
-  }
-
-
-  btn.disabled=true;
-  btn.textContent="লগইন হচ্ছে...";
-  msg.textContent="";
-
-
-  try{
-
-    const res =
-      await fetch(
-        SUPABASE_URL +
-        "/auth/v1/token?grant_type=password",
-        {
-          method:"POST",
-
-          headers:{
-            "Content-Type":"application/json",
-            "apikey":SUPABASE_KEY
-          },
-
-          body:JSON.stringify({
-            email:email,
-            password:password
-          })
-        }
-      );
-
-
-    const data=await res.json();
-
-
-    if(!res.ok){
-
-      msg.textContent =
-        data.error_description ||
-        data.msg ||
-        "ইমেইল অথবা পাসওয়ার্ড ভুল।";
-
-      btn.disabled=false;
-      btn.textContent="লগইন করুন";
-      return;
-
-    }
-
-
-    /* Login সফল */
-
-    localStorage.setItem(
-      "earn222_access_token",
-      data.access_token || ""
-    );
-
-    localStorage.setItem(
-      "earn222_user_email",
-      email
-    );
-
-
-    msg.textContent="লগইন সফল হয়েছে।";
-
-    setTimeout(function(){
-
-      location.replace(
-        "earn222_dashboard.html"
-      );
-
-    },300);
-
-
-  }catch(error){
-
-    msg.textContent=
-      "ইন্টারনেট সংযোগে সমস্যা হয়েছে।";
-
-    btn.disabled=false;
-    btn.textContent="লগইন করুন";
-
-  }
-
-}
-
-
-/* REGISTRATION */
-
-async function register(){
+async function registerUser(){
 
   const name =
     document.getElementById("regName").value.trim();
@@ -444,41 +284,20 @@ async function register(){
     document.getElementById("regInvite").value.trim();
 
   const msg =
-    document.getElementById("registerMsg");
-
-  const btn =
-    document.getElementById("registerBtn");
+    document.getElementById("msg");
 
 
-  if(!name){
+  if(!name || !mobile || !email || !password){
 
-    msg.textContent="পূর্ণ নাম দিন।";
+    msg.textContent="সব তথ্য পূরণ করুন।";
     return;
-
   }
 
 
-  if(!mobile){
+  if(password.length < 6){
 
-    msg.textContent="মোবাইল নাম্বার দিন।";
+    msg.textContent="পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।";
     return;
-
-  }
-
-
-  if(!email){
-
-    msg.textContent="Gmail দিন।";
-    return;
-
-  }
-
-
-  if(!password){
-
-    msg.textContent="পাসওয়ার্ড দিন।";
-    return;
-
   }
 
 
@@ -486,98 +305,183 @@ async function register(){
 
     msg.textContent="দুইটি পাসওয়ার্ড মিলছে না।";
     return;
-
   }
 
 
-  if(password.length < 6){
-
-    msg.textContent=
-      "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।";
-
-    return;
-
-  }
-
-
-  btn.disabled=true;
-  btn.textContent="অ্যাকাউন্ট তৈরি হচ্ছে...";
-  msg.textContent="";
+  msg.textContent="রেজিস্ট্রেশন হচ্ছে...";
 
 
   try{
 
-    const res =
-      await fetch(
-        SUPABASE_URL +
-        "/auth/v1/signup",
-        {
-          method:"POST",
+    const response = await fetch(
+      SUPABASE_URL + "/auth/v1/signup",
+      {
+        method:"POST",
 
-          headers:{
-            "Content-Type":"application/json",
-            "apikey":SUPABASE_KEY
-          },
+        headers:{
+          "Content-Type":"application/json",
+          "apikey":SUPABASE_KEY
+        },
 
-          body:JSON.stringify({
+        body:JSON.stringify({
 
-            email:email,
+          email:email,
 
-            password:password,
+          password:password,
 
-            data:{
-              full_name:name,
-              mobile:mobile,
-              invite_code:invite
-            }
+          data:{
+            full_name:name,
+            mobile:mobile,
+            invite_code:invite
+          }
 
-          })
-        }
-      );
+        })
+      }
+    );
 
 
-    const data=await res.json();
+    const data = await response.json();
 
 
-    if(!res.ok){
+    if(!response.ok){
 
       msg.textContent =
         data.msg ||
         data.error_description ||
+        data.message ||
         "রেজিস্ট্রেশন করা যায়নি।";
 
-      btn.disabled=false;
-      btn.textContent="অ্যাকাউন্ট তৈরি করুন";
       return;
-
     }
 
 
-    msg.textContent=
+    msg.textContent =
       "রেজিস্ট্রেশন সফল! এখন Login করুন।";
 
 
-    /* Login পেজে নিয়ে যাবে */
+    document.getElementById("loginEmail").value =
+      email;
 
-    document.getElementById("loginEmail").value=email;
 
     setTimeout(function(){
 
       showLogin();
 
-    },700);
+    },800);
 
 
   }catch(error){
 
-    msg.textContent=
-      "ইন্টারনেট সংযোগে সমস্যা হয়েছে।";
+    msg.textContent =
+      "ইন্টারনেট বা সার্ভারের সমস্যা হয়েছে।";
 
   }
 
+}
 
-  btn.disabled=false;
-  btn.textContent="অ্যাকাউন্ট তৈরি করুন";
+
+/* =========================
+   LOGIN
+========================= */
+
+async function loginUser(){
+
+  const email =
+    document.getElementById("loginEmail").value.trim();
+
+  const password =
+    document.getElementById("loginPassword").value;
+
+  const msg =
+    document.getElementById("msg");
+
+
+  if(!email || !password){
+
+    msg.textContent =
+      "Gmail এবং পাসওয়ার্ড দিন।";
+
+    return;
+  }
+
+
+  msg.textContent =
+    "লগইন হচ্ছে...";
+
+
+  try{
+
+    const response = await fetch(
+
+      SUPABASE_URL +
+      "/auth/v1/token?grant_type=password",
+
+      {
+        method:"POST",
+
+        headers:{
+          "Content-Type":"application/json",
+          "apikey":SUPABASE_KEY
+        },
+
+        body:JSON.stringify({
+
+          email:email,
+
+          password:password
+
+        })
+      }
+    );
+
+
+    const data = await response.json();
+
+
+    if(!response.ok){
+
+      msg.textContent =
+        data.error_description ||
+        data.msg ||
+        data.message ||
+        "Gmail অথবা পাসওয়ার্ড ভুল।";
+
+      return;
+    }
+
+
+    /* LOGIN SUCCESS */
+
+    localStorage.setItem(
+      "earn222_access_token",
+      data.access_token || ""
+    );
+
+    localStorage.setItem(
+      "earn222_user_email",
+      email
+    );
+
+
+    msg.textContent =
+      "লগইন সফল হয়েছে।";
+
+
+    setTimeout(function(){
+
+      location.replace(
+        "earn222_dashboard.html"
+      );
+
+    },500);
+
+
+  }catch(error){
+
+    msg.textContent =
+      "ইন্টারনেট বা সার্ভারের সমস্যা হয়েছে।";
+
+  }
 
 }
 
